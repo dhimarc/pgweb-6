@@ -1,2 +1,2 @@
 # pgweb-6
-Data Kota Salatiga
+Data Kota Salatiga, Kabupaten Jawa Tengah
