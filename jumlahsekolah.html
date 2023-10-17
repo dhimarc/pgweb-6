@@ -43,8 +43,6 @@
                             <li><a class="dropdown-item" href="jumlahpddkmiskin.html">Jumlah Penduduk Miskin</a></li>
                             <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a></li>
                             <li>
-                       
-                                
                             </li>
                         </ul>
                     </li>
@@ -63,7 +61,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h5>Jumlah Penduduk Kota Salatiga</h5>
+                <h5>Jumlah Sekolah Kota Salatiga</h5>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -101,12 +99,9 @@
     <script>
         var options = {
             series: [{
-                name: 'Jumlah Penduduk',
-                data: [50800, 46791, 44938, 52536]},
-                {
-                name: 'Jumlah Penduduk',
-                data: [50800, 46791, 44938, 52536]},],
-                
+                name: 'Jumlah Sekolah',
+                data: [19, 19, 22, 24]
+            },],
             chart: {
                 type: 'bar',
                 height: 350
@@ -137,7 +132,7 @@
             },
             yaxis: {
                 title: {
-                    text: 'Besaran Jumlah (Jiwa)'
+                    text: 'Jumlah Sekolah'
                 }
             },
             fill: {
@@ -146,7 +141,7 @@
             tooltip: {
                 y: {
                     formatter: function (val) {
-                        return  val + " Jiwa"
+                        return  val + " Sekolah"
                     }
                 }
             },

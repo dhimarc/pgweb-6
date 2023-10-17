@@ -38,13 +38,12 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="index.html">Populasi Penduduk</a></li>
-                            <li><a class="dropdown-item" href="#">Jumlah Sekolah</a></li>
+                            <li><a class="dropdown-item" href="jumlahsekolah.html">Jumlah Sekolah</a></li>
                             <li><a class="dropdown-item" href="jalan.html">Jumlah Jalan</a></li>
-                            <li><a class="dropdown-item" href="#">Jumlah Sekolah</a></li>
+                            <li><a class="dropdown-item" href="jumlahpddkmiskin.html">Jumlah Penduduk Miskin</a></li>
+                            <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a></li>
                             <li>
-                                <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -62,7 +61,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h5>Jumlah Penduduk Kota Salatiga</h5>
+                <h5>Jumlah Penduduk Miskin</h5>
             </div>
             <div class="card-body">
                 <div id="chart"></div>
@@ -99,63 +98,48 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         var options = {
-            series: [{
-                name: 'Jumlah Sekolah',
-                data: [19, 19, 22, 24]
-            },],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top',
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['Argomulyo', 'Tingkir', 'Sidomukti', 'Sidorejo'],
-                title: {
-                    text: 'Kecamatan'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Jumlah Sekolah'
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return  val + " Sekolah"
-                    }
-                }
-            },
-            dataLabels: {
-          enabled: true,
-          formatter: function (val) {
-            return val;
+          series: [
+          {
+            name: "Jumlah",
+            data: [50001, 46341, 44549, 52634],
           },
-          offsetY: -20,
-          style: {
-            fontSize: '12px',
-            colors: ["#304758"]
-          }
+        ],
+          chart: {
+          type: 'bar',
+          height: 350,
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 0,
+            horizontal: true,
+            barHeight: '80%',
+            isFunnel: true,
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function (val, opt) {
+            return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
+          },
+          dropShadow: {
+            enabled: true,
+          },
+        },
+        title: {
+          text: 'Jumlah Penduduk Miskin (jiwa)',
+          align: 'middle',
+        },
+        xaxis: {
+          categories: [
+            'Argomulyo',
+            'Tingkir',
+            'Sidomukti',
+            'Sidorejo',
+            
+          ],
+        },
+        legend: {
+          show: false,
         },
         };
 
